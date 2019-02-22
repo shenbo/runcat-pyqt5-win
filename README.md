@@ -2,7 +2,7 @@
 
 [RunCat](http://kyomesuke.com/runcat/index.html) – mac应用，用奔跑的猫来显示当前系统资源占用情况。
 
-找了一圈只有mac版，于是用pyqt5撸一个，在Windows状态栏（托盘）养猫。
+找了一圈只有mac版，于是用pyqt5撸一个，在Windows任务栏（通知区域）养猫。
 
 
 ## Requirements
