@@ -4,6 +4,9 @@
 
 找了一圈只有mac版，于是用pyqt5撸一个，在Windows任务栏（通知区域）养猫。
 
+## Screenshot
+
+![](runcat-screenshot.gif)
 
 ## Requirements
 - psutil
