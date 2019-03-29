@@ -7,6 +7,7 @@ from PyQt5.QtWidgets import QApplication, QSystemTrayIcon
 
 import psutil
 
+
 # Get cpu usage
 def func():
     while True:
@@ -14,26 +15,29 @@ def func():
         cpu = psutil.cpu_percent(interval=1) / 100
         time.sleep(1)
 
-# Create Qt App
+
+# Create pyqt app
 app = QApplication(sys.argv)
 app.setQuitOnLastWindowClosed(False)
-# Create trayicon
+
+# Create system tray icon
 tray = QSystemTrayIcon()
-tray.setIcon(QIcon('0.ico'))
+tray.setIcon(QIcon('icons/0.png'))
 tray.setVisible(True)
 
+# Update tray icon
 cpu = 0.1
 timer = threading.Timer(1, func, [])
 timer.start()
 
 while True:
-    t = (cpu * cpu - 10 * cpu + 10) / 40
+    t = (cpu * cpu - 10 * cpu + 10) / 50
     for i in range(5):
-        # Update trayicon
-        tray.setIcon(QIcon('{}.ico'.format(i)))
+        tray.setIcon(QIcon('icons/{}.png'.format(i)))
         tray.setToolTip('CPU: {:.2%}'.format(cpu))
         time.sleep(t)
 
 app.exec_()
 
-# pyinstaller --onefile -w -i 2.ico -F runcat.py
+# pyinstaller -w -i favicon.ico -F runcat.py
+# pyinstaller -w -i favicon.ico runcat.py
