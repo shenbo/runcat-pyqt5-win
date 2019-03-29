@@ -23,7 +23,7 @@ GPU使用情况可以用[nvidia-ml-py](https://pypi.org/project/nvidia-ml-py/)
 
 - 直接clone， 改 *.pyw 运行
 
-- 或者下载打包后的 *.exe， 但是有30多M。。。 [下载exe](https://github.com/shenbo/runcat-pyqt5-win/releases) 
+- 或者下载打包后的程序 [下载7z](https://github.com/shenbo/runcat-pyqt5-win/releases) 
 
 > ref:
 > - https://github.com/Kyome22/menubar_runcat
