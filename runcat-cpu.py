@@ -33,7 +33,7 @@ timer.start()
 while True:
     t = (cpu * cpu - 10 * cpu + 10) / 50
     for i in range(5):
-        tray.setIcon(QIcon('icons/{}.png'.format(i)))
+        tray.setIcon(QIcon('icons/c{}.png'.format(i)))
         tray.setToolTip('CPU: {:.2%}'.format(cpu))
         time.sleep(t)
 

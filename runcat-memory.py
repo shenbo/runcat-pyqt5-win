@@ -33,7 +33,7 @@ timer.start()
 while True:
     t = (mem * mem - 10 * mem + 10) / 40
     for i in range(5):
-        tray.setIcon(QIcon('icons/{}.png'.format(i)))
+        tray.setIcon(QIcon('icons/g{}.png'.format(i)))
         tray.setToolTip('memory: {:.2%}'.format(mem))
         time.sleep(t)
 
