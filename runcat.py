@@ -1,18 +1,20 @@
 import sys
-import time
 import threading
+import time
 
+import psutil
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QSystemTrayIcon
 
-import psutil
 
+# === cpu & mem ====
+def cpu_mem_func():
+    global cpu, mem
 
-# Get cpu usage
-def func():
     while True:
-        global cpu
         cpu = psutil.cpu_percent(interval=1) / 100
+        mem = psutil.virtual_memory().percent / 100
+
         time.sleep(1)
 
 
@@ -25,19 +27,29 @@ tray = QSystemTrayIcon()
 tray.setIcon(QIcon('icons/0.png'))
 tray.setVisible(True)
 
-# Update tray icon
-cpu = 0.1
-timer = threading.Timer(1, func, [])
-timer.start()
 
-while True:
-    t = (cpu * cpu - 10 * cpu + 10) / 50
+# Update tray icon
+def update_icon(name, value, icons):
+    t = (value * value - 10 * value + 10) / 50
     for i in range(5):
-        tray.setIcon(QIcon('icons/{}.png'.format(i)))
-        tray.setToolTip('CPU: {:.2%}'.format(cpu))
+        tray.setIcon(icons[i])
+        tray.setToolTip(f'{name}: {value:.2%}')
         time.sleep(t)
 
-app.exec_()
+
+# === threading ====
+cpu, mem = 0.1, 0.1
+timer = threading.Timer(1, cpu_mem_func, [])
+timer.start()
+
+icons_c = [QIcon(f'icons/c{i}.png') for i in range(5)]
+icons_m = [QIcon(f'icons/m{i}.png') for i in range(5)]
+
+while True:
+    update_icon('cpu', cpu, icons_c)
+    # update_icon('mem', mem, icons_m)
+
+# app.exec_()
 
 # pyinstaller -w -i favicon.ico -F runcat.py
 # pyinstaller -w -i favicon.ico runcat.py
