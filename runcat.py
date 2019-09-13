@@ -42,10 +42,10 @@ cpu, mem = 0.1, 0.1
 timer = threading.Timer(1, cpu_mem_func, [])
 timer.start()
 
-icons_c = [QIcon(f'icons/c{i}.png') for i in range(5)]
+icons = [QIcon(f'icons/{i}.png') for i in range(5)]
 
 while True:
-    update_icon('cpu', cpu, icons_c)
+    update_icon('cpu', cpu, icons)
 
 # app.exec_()
 
