@@ -31,10 +31,10 @@ timer = threading.Timer(1, func, [])
 timer.start()
 
 while True:
-    t = (mem * mem - 10 * mem + 10) / 40
+    t = (mem * mem - 10 * mem + 10) / 50
     for i in range(5):
-        tray.setIcon(QIcon('icons/g{}.png'.format(i)))
-        tray.setToolTip('memory: {:.2%}'.format(mem))
+        tray.setIcon(QIcon(f'icons/{i}.png'))
+        tray.setToolTip(f'memory: {mem:.2%}')
         time.sleep(t)
 
 app.exec_()

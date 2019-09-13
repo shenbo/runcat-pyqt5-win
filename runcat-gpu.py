@@ -36,8 +36,8 @@ timer.start()
 while True:
     t = (gpu * gpu - 10 * gpu + 10) / 50
     for i in range(5):
-        tray.setIcon(QIcon('icons/g{}.png'.format(i)))
-        tray.setToolTip('GPU: {:.2%}'.format(gpu))
+        tray.setIcon(QIcon(f'icons/{i}.png'))
+        tray.setToolTip(f'GPU: {gpu:.2%}')
         time.sleep(t)
 
 app.exec_()
