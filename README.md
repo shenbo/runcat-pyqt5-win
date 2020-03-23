@@ -28,3 +28,16 @@ GPU使用情况可以用[nvidia-ml-py](https://pypi.org/project/nvidia-ml-py/)
 > ref:
 > - https://github.com/Kyome22/menubar_runcat
 > - https://github.com/sunthx/RunCat-Win
+
+
+## Versions
+
+V0.2
+- add context menu
+  - change icon type
+  - quit 
+- add mario icons
+V0.1 
+- runcat @ cpu 
+- runcat @ rom 
+- runcat @ gpu
