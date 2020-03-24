@@ -11,7 +11,7 @@ from PyQt5.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QAction
 class TrayIcon(QSystemTrayIcon):
     def __init__(self, parent=None):
         super(TrayIcon, self).__init__(parent)
-        self.cpu_usage = 0.1  # 初始化
+        self.cpu_usage = 0.2  # 初始化
 
         self.icon_type = 'runcat'         # 设定默认图标，并加载
         self.icon_list = self.loadIcon()
@@ -54,12 +54,12 @@ class TrayIcon(QSystemTrayIcon):
         while True:
             self.cpu_usage = psutil.cpu_percent(interval=1) / 100
             # print(self.cpu_usage)
-            time.sleep(1)
+            time.sleep(0.5)
 
     # update icon
     def thread_update_icon(self):
         while True:
-            t = (self.cpu_usage * self.cpu_usage - 10 * self.cpu_usage + 10) / 50
+            t = 0.2 - self.cpu_usage * 0.15
             for i in self.icon_list:
                 self.setIcon(i)
                 self.setToolTip(f'cpu: {self.cpu_usage:.2%}')

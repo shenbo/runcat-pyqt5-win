@@ -29,12 +29,12 @@ tray.setIcon(QIcon('icons/runcat/0.png'))
 tray.setVisible(True)
 
 # Update tray icon
-gpu = 0.1
+gpu = 0.2
 timer = threading.Timer(1, func, [])
 timer.start()
 
 while True:
-    t = (gpu * gpu - 10 * gpu + 10) / 50
+    t = 0.2 - gpu * 0.15
     for i in range(5):
         tray.setIcon(QIcon(f'icons/runcat/{i}.png'))
         tray.setToolTip(f'gpu: {gpu:.2%}')
