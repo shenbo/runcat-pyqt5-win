@@ -1,3 +1,4 @@
+import os
 import sys
 import threading
 import time
@@ -29,9 +30,12 @@ class TrayIcon(QSystemTrayIcon):
     # 设置菜单
     def setMenu(self):
         self.menu = QMenu()
-        self.action_1 = QAction('runcat', self, triggered=lambda: self.changeIconType('runcat'))
-        self.action_2 = QAction('mario', self, triggered=lambda: self.changeIconType('mario'))
-        self.action_q = QAction('quit', self, triggered=self.quit)
+        self.action_1 = QAction(QIcon(f'icons/cat.png'),
+                                'Cat', self, triggered=lambda: self.changeIconType('runcat'))
+        self.action_2 = QAction(QIcon(f'icons/mario/0.png'),
+                                'Mario', self, triggered=lambda: self.changeIconType('mario'))
+        self.action_q = QAction(QIcon(f'icons/quit.png'),
+                                'Quit', self, triggered=self.quit)
 
         self.menu.addAction(self.action_1)
         self.menu.addAction(self.action_2)
@@ -73,8 +77,8 @@ class TrayIcon(QSystemTrayIcon):
     # 退出程序
     def quit(self):
         self.setVisible(False)
-        print(app.quit())
-        print(app.exec_())
+        app.quit()
+        os._exit(-1)
 
 
 if __name__ == "__main__":

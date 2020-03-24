@@ -22,7 +22,7 @@ app.setQuitOnLastWindowClosed(False)
 
 # Create system tray icon
 tray = QSystemTrayIcon()
-tray.setIcon(QIcon('icons/0.png'))
+tray.setIcon(QIcon('icons/runcat/0.png'))
 tray.setVisible(True)
 
 # Update tray icon
@@ -33,11 +33,11 @@ timer.start()
 while True:
     t = (cpu * cpu - 10 * cpu + 10) / 50
     for i in range(5):
-        tray.setIcon(QIcon(f'icons/{i}.png'))
+        tray.setIcon(QIcon(f'icons/runcat/{i}.png'))
         tray.setToolTip(f'cpu: {cpu:.2%}')
         time.sleep(t)
 
 app.exec_()
 
-# pyinstaller -w -i favicon.ico -F runcat.py
-# pyinstaller -w -i favicon.ico runcat.py
+# pyinstaller -w -i favicon.ico -F runcat-cpu.py
+# pyinstaller -w -i favicon.ico runcat-cpu.py

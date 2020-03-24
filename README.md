@@ -23,7 +23,7 @@ GPU使用情况可以用[nvidia-ml-py](https://pypi.org/project/nvidia-ml-py/)
 
 - 直接clone， 改 *.pyw 运行
 
-- 或者下载打包后的程序 [下载7z](https://github.com/shenbo/runcat-pyqt5-win/releases) 
+- ~~或者下载打包后的程序[下载7z](https://github.com/shenbo/runcat-pyqt5-win/releases)~~  
 
 > ref:
 > - https://github.com/Kyome22/menubar_runcat
@@ -37,7 +37,8 @@ V0.2
   - change icon type
   - quit 
 - add mario icons
+
 V0.1 
 - runcat @ cpu 
-- runcat @ rom 
+- runcat @ memory 
 - runcat @ gpu
