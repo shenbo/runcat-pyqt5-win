@@ -31,14 +31,19 @@ GPU使用情况可以用[nvidia-ml-py](https://pypi.org/project/nvidia-ml-py/)
 
 
 ## Versions
-
-V0.2
+V0.3 @ runcat.py
 - add context menu
-  - change icon type
-  - quit 
-- add mario icons
+  - change monitor type： [cpu, memory, gpu]
+   
+    ![](runcat-contex-menu.png)
 
-V0.1 
+V0.2 @ runcat-cpu-mario.py
+- add context menu
+  - change icon type: [runcat, mario]
+  - quit 
+- add mario icons <img src="icons/mario/0.png" width="20x">
+
+V0.1 @ runcat-cpu.py, runcat-memory.py, runcat-gpu.py
 - runcat @ cpu 
 - runcat @ memory 
 - runcat @ gpu
