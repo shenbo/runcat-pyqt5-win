@@ -41,3 +41,7 @@ while True:
         time.sleep(t)
 
 app.exec_()
+
+#
+# pyinstaller -w -i favicon.ico -F runcat-v0.1-gpu.py
+# pyinstaller -w -i favicon.ico runcat-v0.1-gpu.py

@@ -39,5 +39,6 @@ while True:
 
 app.exec_()
 
-# pyinstaller -w -i favicon.ico -F runcat-cpu.py
-# pyinstaller -w -i favicon.ico runcat-cpu.py
+#
+# pyinstaller -w -i favicon.ico -F runcat-v0.1-cpu.py
+# pyinstaller -w -i favicon.ico runcat-v0.1-cpu.py

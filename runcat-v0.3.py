@@ -38,20 +38,15 @@ class TrayIcon(QSystemTrayIcon):
     # 设置菜单
     def setMenu(self):
         self.menu = QMenu()
-        self.action_1 = QAction(QIcon(f'icons/cat.png'),
-                                'Cat', self, triggered=lambda: self.changeIconType('runcat'))
-        self.action_2 = QAction(QIcon(f'icons/mario/0.png'),
-                                'Mario', self, triggered=lambda: self.changeIconType('mario'))
 
-        self.action_c = QAction(QIcon(f'icons/cpu.png'),
-                                'CPU', self, triggered=lambda: self.changeMonitor('cpu'))
-        self.action_m = QAction(QIcon(f'icons/mem.png'),
-                                'Memory', self, triggered=lambda: self.changeMonitor('mem'))
-        self.action_g = QAction(QIcon(f'icons/gpu.png'),
-                                'GPU', self, triggered=lambda: self.changeMonitor('gpu'))
+        self.action_1 = QAction(QIcon(f'icons/cat.png'), 'cat', self, triggered=lambda: self.changeIconType('runcat'))
+        self.action_2 = QAction(QIcon(f'icons/mario/0.png'), 'mario', self, triggered=lambda: self.changeIconType('mario'))
 
-        self.action_q = QAction(QIcon(f'icons/quit.png'),
-                                'Quit', self, triggered=self.quit)
+        self.action_c = QAction(QIcon(f'icons/cpu.png'), 'cpu', self, triggered=lambda: self.changeMonitor('cpu'))
+        self.action_m = QAction(QIcon(f'icons/mem.png'), 'memory', self, triggered=lambda: self.changeMonitor('mem'))
+        self.action_g = QAction(QIcon(f'icons/gpu.png'), 'gpu', self, triggered=lambda: self.changeMonitor('gpu'))
+
+        self.action_q = QAction(QIcon(f'icons/quit.png'), 'quit', self, triggered=self.quit)
 
         self.menu.addAction(self.action_c)
         self.menu.addAction(self.action_m)
@@ -61,6 +56,7 @@ class TrayIcon(QSystemTrayIcon):
         self.menu.addAction(self.action_2)
         self.menu.addSeparator()
         self.menu.addAction(self.action_q)
+
         self.setContextMenu(self.menu)
 
     # 根据使用率更新图标，
@@ -88,28 +84,28 @@ class TrayIcon(QSystemTrayIcon):
             elif self.monitor == 'gpu':
                 mon = self.gpu_usage
             
-            t = 0.18 - mon * 0.15
+            t = 0.2 - mon * 0.15
             # print(mon, t)
             for i in self.icon_list:
                 self.setIcon(i)
                 tip = f'cpu: {self.cpu_usage:.2%} \nmem: {self.mem_usage:.2%} \ngpu: {self.gpu_usage:.2%}'
                 self.setToolTip(tip)
-                # print(i, self.cpu_usage)
+                # print(i, self.monitor, f'{self.cpu_usage}:.2%')
                 time.sleep(t)
 
     # Change icon type
-    def changeIconType(self, type):
-        print(type)
-        if type != self.icon_type:
-            self.icon_type = type
+    def changeIconType(self, new_icon_type):
+        print(new_icon_type)
+        if new_icon_type != self.icon_type:
+            self.icon_type = new_icon_type
             self.icon_list = self.loadIcon()
             print(f'Load {self.icon_type}({len(self.icon_list)}) icons...')
 
     # change monitor type
-    def changeMonitor(self, monitor_type):
-        print(monitor_type)
-        if monitor_type != self.monitor:
-            self.monitor = monitor_type
+    def changeMonitor(self, new_monitor):
+        print(self.monitor, new_monitor)
+        if new_monitor != self.monitor:
+            self.monitor = new_monitor
 
     # 退出程序
     def quit(self):
@@ -123,3 +119,7 @@ if __name__ == "__main__":
     tray = TrayIcon()
 
     sys.exit(app.exec_())
+
+
+#
+# pyinstaller -w -i favicon.ico runcat-v0.3.py --add-data "icons;icons"
