@@ -26,9 +26,6 @@ cats =  [ICOImage(f'icons/runcat/{i}.ico') for i in range(5)]
 runcat = pystray.Icon('run cat', icon=cats[0])
 
 
-
-
-
 # starts the setup thread.
 def start_setup(setup):
     runcat.visible = True
@@ -45,4 +42,3 @@ def start_setup(setup):
 
 
 runcat.run(setup=start_setup)
-

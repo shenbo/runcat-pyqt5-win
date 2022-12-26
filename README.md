@@ -31,6 +31,13 @@ GPU使用情况可以用[nvidia-ml-py](https://pypi.org/project/nvidia-ml-py/)
 
 
 ## Versions
+V0.6 @ runcat by pystray
+  ![](runcat-pystray.png)
+
+V0.5 @ runcat by pystray test
+
+V0.4 @ runcat by infi.systray
+
 V0.3 @ runcat-v0.3.py
 - add context menu
   - change monitor type： [cpu, memory, gpu]
