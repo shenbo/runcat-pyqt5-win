@@ -39,7 +39,10 @@ GPU使用情况可以用[nvidia-ml-py](https://pypi.org/project/nvidia-ml-py/)
 ## Versions
 
 V1.0 @ runcat by pyqt6. 
-  icon 直接用 base64 转换
+- icon 直接用 base64 转换
+
+V0.7 @ runcat by pystray. 
+- icon 直接用 base64 转换
 
 V0.6 @ runcat by pystray
   ![](runcat-pystray.png)
