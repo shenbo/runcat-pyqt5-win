@@ -2,7 +2,7 @@
 
 [RunCat](http://kyomesuke.com/runcat/index.html) 是一款 mac应用，用奔跑的猫来显示当前系统资源（CPU）占用情况。
 
-Windows 版本 也发布了，[RunCat for win](https://github.com/Kyome22/RunCat_for_windows) 为 ， 基于C#。
+Windows 版本(基于C# .net)也发布了，[RunCat for win](https://github.com/Kyome22/RunCat_for_windows) 。
 
 可以直接用 scoop 安装： `scoop install runcat`。
 
