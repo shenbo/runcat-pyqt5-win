@@ -1,8 +1,13 @@
-# runcat-pyqt5-win
+# Ref
 
 [RunCat](http://kyomesuke.com/runcat/index.html) 是一款 mac应用，用奔跑的猫来显示当前系统资源（CPU）占用情况。
 
-但是只有mac版，于是用python撸了一个，可以在windows任务栏（通知区域）养猫。
+Windows 版本 也发布了，[RunCat for win](https://github.com/Kyome22/RunCat_for_windows) 为 ， 基于C#。
+
+可以直接用 scoop 安装： `scoop install runcat`。
+
+# runcat-pyqt-win
+这里用python撸了一个，在windows任务栏（通知区域）养猫。
 
 首先用[psutil](https://pypi.org/project/psutil/)
 获得CPU或内存的使用情况，然后用pyqt5创建QSystemTrayIcon显示在任务栏的托盘区域。
@@ -27,10 +32,15 @@ GPU使用情况可以用[nvidia-ml-py](https://pypi.org/project/nvidia-ml-py/)
 
 > ref:
 > - https://github.com/Kyome22/menubar_runcat
+> - https://github.com/Kyome22/RunCat_for_windows
 > - https://github.com/sunthx/RunCat-Win
 
 
 ## Versions
+
+V1.0 @ runcat by pyqt6. 
+  icon 直接用 base64 转换
+
 V0.6 @ runcat by pystray
   ![](runcat-pystray.png)
 
